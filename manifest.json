@@ -1,7 +1,7 @@
 {
-  "schema": 1,
-  "version": "2026-09-12T14:25:10Z",
-  "generated_at": "2026-09-12T14:25:10Z",
+  "schema": 2,
+  "version": "2026-09-12T17:05:36Z",
+  "generated_at": "2026-09-12T17:05:36Z",
   "files": {
     "cards": {
       "path": "cards.json.gz",
@@ -30,8 +30,8 @@
     },
     "meta": {
       "path": "meta.json.gz",
-      "sha": "6b9e280d8b53b655",
-      "bytes": 330
+      "sha": "66da6a6d6fe30987",
+      "bytes": 331
     }
   }
 }
