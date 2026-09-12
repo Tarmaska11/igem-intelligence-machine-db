@@ -1,13 +1,17 @@
 {
   "hero": {
-    "year_range": "2008-2025"
+    "year_range": "2008-2026"
   },
   "stats": {
-    "segments": []
+    "segments": [
+      "5 094 projects",
+      "19 years (2008-2026)",
+      "edited from the database repo"
+    ]
   },
   "nav_button": {
     "enabled": true,
-    "label": "Database",
+    "label": "Coverage notes",
     "page": "pages/custom.html"
   }
 }
