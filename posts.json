@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "title": "Welcome to the iGEM Intelligence Machine",
+      "author": "The IM Team",
+      "date": "2026-09-12",
+      "image": "",
+      "abstract": "What this tool is, why we built it, and how it can save your team weeks of digging before you ever touch a bench.",
+      "body": "<p>Every year hundreds of iGEM teams reinvent the same wheels. Someone has probably already tried your chassis, your promoter, or your exact failure mode, but that knowledge is spread over a thousand wikis that go offline and change URLs.</p><p>This is a single searchable archive of every iGEM project from 2008 to 2025. Search by idea, chassis organism, molecular technique, biological part, target molecule, result, or failure.</p><h3>Why it keeps working</h3><p>The whole archive is built into the page, so it keeps working even if everything else goes down.</p>"
+    }
+  ]
+}

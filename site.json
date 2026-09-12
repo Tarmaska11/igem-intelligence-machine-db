@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "year_range": "2008-2025"
+  },
+  "stats": {
+    "segments": []
+  },
+  "nav_button": {
+    "enabled": true,
+    "label": "Database",
+    "page": "pages/custom.html"
+  }
+}
