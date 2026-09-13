@@ -9,5 +9,24 @@
     "enabled": true,
     "label": "Database",
     "page": "pages/custom.html"
+  },
+  "footer": {
+    "enabled": true,
+    "note": "A search over every iGEM project, 2008-2025. Made for future iGEMers.",
+    "links": [
+      {
+        "label": "Instagram @tarmaska_11",
+        "url": "https://instagram.com/tarmaska_11"
+      },
+      {
+        "label": "Source code",
+        "url": "https://github.com/Tarmaska11/igem-intelligence-machine"
+      },
+      {
+        "label": "MIT licence",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    ],
+    "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams."
   }
 }

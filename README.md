@@ -1,8 +1,8 @@
-# iGEM Intelligence Machine — database
+# iGEM Intelligence Machine - database
 
 This repository is the **content** behind https://tarmaska11.github.io/igem-intelligence-machine/
 
-The website itself is frozen (it has to be — iGEM locks competition repositories after the
+The website itself is frozen (it has to be - iGEM locks competition repositories after the
 deadline). Everything you might want to change afterwards lives here instead. Edit a file,
 commit, and the live site picks it up within about ten minutes.
 
@@ -18,7 +18,7 @@ commit, and the live site picks it up within about ten minutes.
 |---|---|
 | `site.json` | the year range in the headline, the numbers under the search box, and the extra button in the navigation bar |
 | `posts.json` | the blog on the home page |
-| `pages/custom.html` | the page that extra button opens — plain HTML and CSS, yours to write |
+| `pages/custom.html` | the page that extra button opens - plain HTML and CSS, yours to write |
 | `cards / records / index / facets / parts / meta .json.gz` | the search data itself |
 | `manifest.json` | version and checksums; the site reads this first |
 | `fulltext/` | the wiki-text search index and the saved wiki text |
@@ -34,12 +34,30 @@ commit, and the live site picks it up within about ten minutes.
 }
 ```
 
-- `year_range` — the highlighted range in "across **2008-2025**".
-- `stats.segments` — leave as `[]` and the site counts everything itself. Put strings in it
+- `year_range` - the highlighted range in "across **2008-2025**".
+- `stats.segments` - leave as `[]` and the site counts everything itself. Put strings in it
   to override, e.g. `["4 978 projects", "18 years", "and counting"]`.
-- `nav_button` — set `enabled` to `false` to hide the button, or change its `label` and the
+- `nav_button` - set `enabled` to `false` to hide the button, or change its `label` and the
   `page` it opens.
-- `parts_button` — set `true` to show the biological-parts registry in the navigation bar.
+- `parts_button` - set `true` to show the biological-parts registry in the navigation bar.
+- `footer` - the strip at the bottom of every page:
+
+```json
+"footer": {
+  "enabled": true,
+  "note": "A search over every iGEM project, 2008-2025. Made for future iGEMers.",
+  "links": [
+    { "label": "Instagram @tarmaska_11", "url": "https://instagram.com/tarmaska_11" },
+    { "label": "Source code", "url": "https://github.com/Tarmaska11/igem-intelligence-machine" },
+    { "label": "MIT licence", "url": "https://opensource.org/licenses/MIT" }
+  ],
+  "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams."
+}
+```
+
+Only `http`/`https` links are turned into links; anything else shows as plain text. Set
+`enabled` to `false` to hide the footer. The site ships with this same wording built in, so
+it still reads correctly if this repository is unreachable.
 
 ### `posts.json`
 
@@ -71,7 +89,7 @@ then copy `dist-data/` over this repository and commit. Two rules:
 
 1. **Copy all of it together.** `fulltext/` and `lsa.json.gz` refer to records by position, so
    mixing a new index with old bundles would point results at the wrong teams. `manifest.json`
-   records the record count and the site refuses a mismatch — but do not rely on that.
+   records the record count and the site refuses a mismatch - but do not rely on that.
 2. **Do not change `schema` in `manifest.json`.** The frozen site only accepts the shape it was
    built for; a different number makes it ignore this repository entirely and use its built-in
    archive. That is the safety net, and it is deliberate.
