@@ -15,8 +15,14 @@
     "note": "A search over every iGEM project, 2008-2025. Made for future iGEMers.",
     "links": [
       {
-        "label": "Instagram @tarmaska_11",
-        "url": "https://instagram.com/tarmaska_11"
+        "prefix": "Creator: ",
+        "label": "@tarmaska_11",
+        "url": "https://www.instagram.com/tarmaska_11/"
+      },
+      {
+        "prefix": "Team: ",
+        "label": "Latvia-Riga",
+        "url": "https://www.instagram.com/igemlv/"
       },
       {
         "label": "Source code",

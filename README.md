@@ -47,7 +47,8 @@ commit, and the live site picks it up within about ten minutes.
   "enabled": true,
   "note": "A search over every iGEM project, 2008-2025. Made for future iGEMers.",
   "links": [
-    { "label": "Instagram @tarmaska_11", "url": "https://instagram.com/tarmaska_11" },
+    { "prefix": "Creator: ", "label": "@tarmaska_11", "url": "https://www.instagram.com/tarmaska_11/" },
+    { "prefix": "Team: ", "label": "Latvia-Riga", "url": "https://www.instagram.com/igemlv/" },
     { "label": "Source code", "url": "https://github.com/Tarmaska11/igem-intelligence-machine" },
     { "label": "MIT licence", "url": "https://opensource.org/licenses/MIT" }
   ],
@@ -56,7 +57,12 @@ commit, and the live site picks it up within about ten minutes.
 }
 ```
 
-Only `http`/`https` links are turned into links; anything else shows as plain text. Set
+`prefix` is optional plain text shown before the link, so "Creator: @tarmaska_11" has only
+the name clickable. Only `http`/`https` URLs become links; anything else shows as plain text.
+
+The footer also shows **Last updated**, taken from this repository's own `Last-Modified`
+header. It moves by itself every time anything here is republished - there is nothing to
+edit and nothing to keep in sync. Set
 `enabled` to `false` to hide the footer. The site ships with this same wording built in, so
 it still reads correctly if this repository is unreachable.
 
