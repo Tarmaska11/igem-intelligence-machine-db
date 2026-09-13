@@ -40,6 +40,38 @@ commit, and the live site picks it up within about ten minutes.
 - `nav_button` — set `enabled` to `false` to hide the button, or change its `label` and the
   `page` it opens.
 - `parts_button` — set `true` to show the biological-parts registry in the navigation bar.
+- `visits` — an extra "Site visited: N times" pill. Off by default; see below.
+
+### The visit counter
+
+A static site cannot count its own visitors — there is no server to keep a tally. So
+the number has to come from somewhere you control:
+
+```json
+"visits": {
+  "enabled": true,
+  "label": "Site visited",
+  "suffix": "times",
+  "endpoint": "https://api.counterapi.dev/v2/<workspace>/<counter>/up",
+  "field": "data.up_count"
+}
+```
+
+`endpoint` is fetched once per page load and should return JSON; `field` is where the
+number lives in that JSON (dots walk into nested objects). Any free hit counter with a
+JSON response works — create one under your own account so it does not disappear.
+
+If you would rather not use a service at all, drop `endpoint` and put a plain number in:
+
+```json
+"visits": { "enabled": true, "value": 12000 }
+```
+
+If the counter is unreachable, returns something unexpected, or `enabled` is false, the
+pill simply does not appear — nothing else on the page changes.
+
+**One caveat worth knowing:** an external counter sees each visitor's IP address, so it
+is a third party in your visitors' path. That is why it is off unless you turn it on.
 
 ### `posts.json`
 

@@ -9,5 +9,12 @@
     "enabled": true,
     "label": "Database",
     "page": "pages/custom.html"
+  },
+  "visits": {
+    "enabled": false,
+    "label": "Site visited",
+    "suffix": "times",
+    "endpoint": "",
+    "field": "count"
   }
 }
