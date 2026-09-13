@@ -40,47 +40,6 @@ commit, and the live site picks it up within about ten minutes.
 - `nav_button` — set `enabled` to `false` to hide the button, or change its `label` and the
   `page` it opens.
 - `parts_button` — set `true` to show the biological-parts registry in the navigation bar.
-- `visits` — an extra "Site visited: N times" pill. Off by default; see below.
-
-### The visit counter
-
-A static site cannot count its own visitors — there is no server to keep a tally. So
-the number has to come from somewhere you control:
-
-```json
-"visits": {
-  "enabled": true,
-  "label": "Site visited",
-  "suffix": "times",
-  "endpoint": "https://api.counterapi.dev/v2/<workspace>/<counter>/up",
-  "field": "data.up_count"
-}
-```
-
-`endpoint` is fetched **once per browser session**, not per page view, so refreshing does
-not inflate the number and a free counter stays inside its write limits. `field` says where
-the number lives in the JSON (dots walk into nested objects).
-
-**Why it cannot come from this repository.** Fetching a file from GitHub Pages runs no code
-— there is nothing on GitHub's side that notices the read, so nothing can add one to a
-number here. Writing to the repo needs a token, and a token inside a public web page would
-let anyone rewrite this database. So the count has to come from something that runs.
-
-`visit-counter/worker.js` in this repository is that something: a Cloudflare Worker with a
-single stored number. Free, no card, about ten minutes to set up, and it belongs to you.
-The file has the steps at the top. Any other counter returning JSON works just as well.
-
-If you would rather not use a service at all, drop `endpoint` and put a plain number in:
-
-```json
-"visits": { "enabled": true, "value": 12000 }
-```
-
-If the counter is unreachable, returns something unexpected, or `enabled` is false, the
-pill simply does not appear — nothing else on the page changes.
-
-**One caveat worth knowing:** an external counter sees each visitor's IP address, so it
-is a third party in your visitors' path. That is why it is off unless you turn it on.
 
 ### `posts.json`
 
