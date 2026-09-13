@@ -51,7 +51,8 @@ commit, and the live site picks it up within about ten minutes.
     { "label": "Source code", "url": "https://github.com/Tarmaska11/igem-intelligence-machine" },
     { "label": "MIT licence", "url": "https://opensource.org/licenses/MIT" }
   ],
-  "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams."
+  "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams.",
+  "copyright": "© 2026"
 }
 ```
 
