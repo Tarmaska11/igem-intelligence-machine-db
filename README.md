@@ -57,9 +57,18 @@ the number has to come from somewhere you control:
 }
 ```
 
-`endpoint` is fetched once per page load and should return JSON; `field` is where the
-number lives in that JSON (dots walk into nested objects). Any free hit counter with a
-JSON response works — create one under your own account so it does not disappear.
+`endpoint` is fetched **once per browser session**, not per page view, so refreshing does
+not inflate the number and a free counter stays inside its write limits. `field` says where
+the number lives in the JSON (dots walk into nested objects).
+
+**Why it cannot come from this repository.** Fetching a file from GitHub Pages runs no code
+— there is nothing on GitHub's side that notices the read, so nothing can add one to a
+number here. Writing to the repo needs a token, and a token inside a public web page would
+let anyone rewrite this database. So the count has to come from something that runs.
+
+`visit-counter/worker.js` in this repository is that something: a Cloudflare Worker with a
+single stored number. Free, no card, about ten minutes to set up, and it belongs to you.
+The file has the steps at the top. Any other counter returning JSON works just as well.
 
 If you would rather not use a service at all, drop `endpoint` and put a plain number in:
 
