@@ -1,6 +1,9 @@
 {
   "hero": {
-    "year_range": "2008-2025"
+    "year_range": "",
+    "title": "",
+    "text": "",
+    "placeholder": ""
   },
   "stats": {
     "segments": []
@@ -12,7 +15,7 @@
   },
   "footer": {
     "enabled": true,
-    "note": "A search over every iGEM project, 2008-2025. Made for future iGEMers.",
+    "note": "A search over every iGEM project, {{year_range}}. Made for future iGEMers.",
     "links": [
       {
         "prefix": "Creator: ",
@@ -33,7 +36,90 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     ],
-    "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams.",
+    "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams. Not an official iGEM Foundation tool.",
     "copyright": "© 2026"
+  },
+  "ai": {
+    "default": "gemini",
+    "instructions": "",
+    "providers": [
+      {
+        "id": "gemini",
+        "label": "Google Gemini",
+        "format": "gemini",
+        "base": "https://generativelanguage.googleapis.com/v1beta",
+        "models": [
+          "gemini-2.5-flash",
+          "gemini-2.5-flash-lite",
+          "gemini-2.5-pro"
+        ],
+        "note": "Uses your own Google AI Studio key, free tier.",
+        "key_placeholder": "Paste your Google AI Studio API key",
+        "help": "<b>Get a free Gemini API key (stays in your browser only):</b><br>1. Open <a href='https://aistudio.google.com/apikey'>aistudio.google.com/apikey</a> and sign in.<br>2. Click <b>Create API key</b> (no billing/card needed).<br>3. Paste it in the box above. It is saved only in this browser (localStorage) - never uploaded to this site or shared. Clear it anytime by emptying the box.<br><i>Free tier uses the Flash models and has per-minute/day limits.</i>"
+      },
+      {
+        "id": "groq",
+        "label": "Groq",
+        "format": "openai",
+        "base": "https://api.groq.com/openai/v1",
+        "models": [
+          "llama-3.3-70b-versatile",
+          "llama-3.1-8b-instant"
+        ],
+        "context_chars": 20000,
+        "note": "Uses your own Groq key, free tier. Long wikis are cut short to fit its limits.",
+        "key_placeholder": "Paste your Groq API key",
+        "help": "<b>Get a free Groq API key:</b><br>1. Open <a href='https://console.groq.com/keys'>console.groq.com/keys</a> and sign in.<br>2. Click <b>Create API Key</b> and paste it above. It stays in this browser only."
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter",
+        "format": "openai",
+        "base": "https://openrouter.ai/api/v1",
+        "models": [
+          "openrouter/auto"
+        ],
+        "note": "Uses your own OpenRouter key. Many models, some free.",
+        "key_placeholder": "Paste your OpenRouter API key",
+        "help": "<b>Get an OpenRouter API key:</b><br>1. Open <a href='https://openrouter.ai/keys'>openrouter.ai/keys</a> and sign in.<br>2. Create a key and paste it above. Pick any model name from <a href='https://openrouter.ai/models'>openrouter.ai/models</a> under <b>Other model</b>."
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI",
+        "format": "openai",
+        "base": "https://api.openai.com/v1",
+        "models": [
+          "gpt-4.1-mini",
+          "gpt-4o-mini"
+        ],
+        "note": "Uses your own OpenAI key (paid).",
+        "key_placeholder": "Paste your OpenAI API key",
+        "help": "Create a key at <a href='https://platform.openai.com/api-keys'>platform.openai.com/api-keys</a>. It stays in this browser only."
+      },
+      {
+        "id": "anthropic",
+        "label": "Anthropic Claude",
+        "format": "anthropic",
+        "base": "https://api.anthropic.com/v1",
+        "models": [
+          "claude-haiku-4-5-20251001",
+          "claude-sonnet-5-5"
+        ],
+        "note": "Uses your own Anthropic key (paid).",
+        "key_placeholder": "Paste your Anthropic API key",
+        "help": "Create a key at <a href='https://console.anthropic.com/settings/keys'>console.anthropic.com</a>. It stays in this browser only."
+      },
+      {
+        "id": "custom",
+        "label": "Other (OpenAI-compatible)",
+        "format": "openai",
+        "custom": true,
+        "base": "",
+        "models": [],
+        "note": "Any service with an OpenAI-style /chat/completions endpoint - DeepSeek, Mistral, Together, a local LM Studio...",
+        "key_placeholder": "Paste the service's API key",
+        "help": "Enter the service's API base URL (the part before <b>/chat/completions</b>, e.g. <b>https://api.deepseek.com</b>) and a model name, then your key. The service has to accept requests from websites; most big ones do."
+      }
+    ]
   }
 }
