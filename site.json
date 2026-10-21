@@ -1,4 +1,5 @@
 {
+  "name": "",
   "hero": {
     "year_range": "",
     "title": "",
@@ -29,7 +30,7 @@
       },
       {
         "label": "Source code",
-        "url": "https://github.com/Tarmaska11/igem-intelligence-machine"
+        "url": "https://gitlab.igem.org/2026/software/latvia-riga/igen-intelligence-machine"
       },
       {
         "label": "MIT licence",

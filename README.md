@@ -1,6 +1,6 @@
 # iGEM Intelligence Machine - database
 
-This repository is the **content** behind https://tarmaska11.github.io/igem-intelligence-machine/
+This repository is the **content** behind https://igen-intelligence-machine-d50ac8.igem.wiki/
 
 The website itself is frozen (it has to be - iGEM locks competition repositories after the
 deadline). Everything you might want to change afterwards lives here instead. Edit a file,
@@ -16,7 +16,7 @@ commit, and the live site picks it up within about ten minutes.
 
 | file | what it controls |
 |---|---|
-| `site.json` | the headline, the text and search-box hint on the home page, the numbers under the search box, the extra button in the navigation bar, the footer, and the Ask AI chat (its instructions and the services offered) |
+| `site.json` | the name of the tool, the headline, the text and search-box hint on the home page, the numbers under the search box, the extra button in the navigation bar, the footer, and the Ask AI chat (its instructions and the services offered) |
 | `posts.json` | the blog on the home page |
 | `pages/custom.html` | the page that extra button opens - plain HTML and CSS, yours to write |
 | `cards / records / index / facets / parts / meta .json.gz` | the search data itself |
@@ -27,11 +27,18 @@ commit, and the live site picks it up within about ten minutes.
 
 ```json
 {
+  "name":        "",
   "hero":        { "year_range": "", "title": "", "text": "", "placeholder": "" },
   "stats":       { "segments": [] },
   "nav_button":  { "enabled": true, "label": "Database", "page": "pages/custom.html" }
 }
 ```
+
+`name` renames the whole tool: the wordmark in the header, the name in the footer and the
+browser tab title, all three at once. Leave it `""` and the name built into the site is
+used. Set it to `"Something Else"` and that is what every visitor sees, without touching the
+website repository - which matters because iGEM locks that repository after the deadline. The
+other texts can refer to it as `{{name}}`.
 
 An empty string keeps the site's built-in wording.
 
@@ -54,7 +61,7 @@ An empty string keeps the site's built-in wording.
   "links": [
     { "prefix": "Creator: ", "label": "@tarmaska_11", "url": "https://www.instagram.com/tarmaska_11/" },
     { "prefix": "Team: ", "label": "Latvia-Riga", "url": "https://www.instagram.com/igemlv/" },
-    { "label": "Source code", "url": "https://github.com/Tarmaska11/igem-intelligence-machine" },
+    { "label": "Source code", "url": "https://gitlab.igem.org/2026/software/latvia-riga/igen-intelligence-machine" },
     { "label": "MIT licence", "url": "https://opensource.org/licenses/MIT" }
   ],
   "legal": "Code under the MIT licence. Project summaries are derived from each team's own public wiki and belong to those teams.",
@@ -78,6 +85,7 @@ the site fills them in from the data it loaded:
 
 | placeholder | becomes |
 |---|---|
+| `{{name}}` | the name of the tool, from `name` above |
 | `{{projects}}` | the number of projects, e.g. 4,978 |
 | `{{year_range}}` | e.g. 2008-2025 (or `hero.year_range` if you set one) |
 | `{{first_year}}`, `{{last_year}}` | e.g. 2008 and 2025 |
