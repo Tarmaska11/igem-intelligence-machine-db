@@ -1,27 +1,27 @@
 {
   "schema": 2,
-  "version": "2026-10-11T17:09:44Z",
-  "generated_at": "2026-10-11T17:09:44Z",
+  "version": "2026-10-23T05:25:58Z",
+  "generated_at": "2026-10-23T05:25:58Z",
   "records": 4978,
   "files": {
     "cards": {
       "path": "cards.json.gz",
-      "sha": "652e850e9444442e",
+      "sha": "df45d99cd657e9aa",
       "bytes": 1958991
     },
     "records": {
       "path": "records.json.gz",
-      "sha": "0f597f65c2970ffb",
-      "bytes": 5955614
+      "sha": "3fc31b305cce9b9a",
+      "bytes": 5955631
     },
     "index": {
       "path": "index.json.gz",
-      "sha": "272dd4aba41a7706",
-      "bytes": 1818042
+      "sha": "2d66de206b3ec58c",
+      "bytes": 1818044
     },
     "facets": {
       "path": "facets.json.gz",
-      "sha": "47fbb0d3ed2dcca2",
+      "sha": "aa8a5071749b3327",
       "bytes": 130287
     },
     "parts": {
@@ -31,8 +31,8 @@
     },
     "meta": {
       "path": "meta.json.gz",
-      "sha": "852db75b36abb51e",
-      "bytes": 324
+      "sha": "97c4fc740ba5f4de",
+      "bytes": 323
     }
   }
 }
